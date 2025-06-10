@@ -1,11 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-purple: #A370E3;
+    --color-yellow: #FFCC60;
+    --color-brown: #5C4B4B;
+    --color-dark: #1E1E1E;
+  }
+}
+
 @layer components {
   .btn-primary {
-    @apply bg-emerald-600 text-white font-semibold px-4 py-2 rounded-lg
-           shadow-md hover:bg-emerald-700 active:scale-95
-           transition duration-150 ease-out;
+    @apply bg-emerald-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-emerald-700 active:scale-95 transition duration-150 ease-out;
   }
+}
+
+@layer utilities {
+  .accent-purple {
+    color: var(--color-purple);
+  }
+
+  .accent-brown {
+    color: var(--color-brown);
+  }
+
+  .accent-yellow {
+    color: var(--color-yellow);
+  }
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
