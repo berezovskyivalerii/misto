@@ -12,19 +12,18 @@ const sliderImages  = [
 
 export default function CatalogLayout() {
   return (
-    <div className="flex">
-      <CategorySidebar categories={categories} />
+    <div className="w-full flex justify-between">
+      <CategorySidebar categories={categories}/>
 
-      <main className="flex-1 p-6">
-        {/* здесь задаём max-width и центровку */}
+       <div className="w-full max-w-[1310px] px-4 sm:px-0">
+
         <div className="w-full max-w-[1310px] mx-auto flex flex-col gap-8">
           <Slider slides={sliderImages} />
 
-          {/* эти секции уже будут тянуться на всю доступную ширину контейнера */}
           <RecommendationSection items={recommendations} />
           <OfferSection          items={offers}          />
         </div>
-      </main>
+      </div>
     </div>
   );
 }

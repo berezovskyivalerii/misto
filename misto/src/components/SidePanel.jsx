@@ -1,5 +1,6 @@
 // src/components/SidePanel.jsx
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SidePanel({ isOpen, onClose }) {
     const [isHelpOpen, setHelpOpen] = useState(false);
@@ -8,14 +9,12 @@ export default function SidePanel({ isOpen, onClose }) {
         <aside>
             <div
                 className={`
-          fixed inset-y-0 left-0 w-[500px] bg-white z-50 shadow-xl
-          transform transition-transform duration-300 ease-in-out
-          ${isOpen ? 'translate-x-0' : '-translate-x-full'}
-        `}
+                    fixed inset-y-0 left-0 w-[360px] sm:w-[500px] bg-white z-50 shadow-xl
+                    transform transition-transform duration-300 ease-in-out
+                    ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+                `}
             >
-                {/* Контейнер с прокруткой */}
                 <div className="h-full flex flex-col overflow-y-auto">
-                    {/* Заголовок */}
                     <div className="flex items-center justify-between p-6">
                         <img src="./misto_logo.png" alt="logo" className="h-7" />
                         <button onClick={onClose} className="p-1">
@@ -27,7 +26,11 @@ export default function SidePanel({ isOpen, onClose }) {
 
                     {/* Каталог */}
                     <div className="p-6">
-                        <button className="flex items-center bg-[--color-purple] rounded-2xl border-[3px] border-[--color-yellow] p-4 w-full justify-center gap-3">
+                        <button
+                            className="flex items-center bg-[--color-purple] rounded-2xl
+                                        border-[3px] border-[--color-yellow] p-4 w-full justify-center gap-3
+                                        hover:bg-[#9462D2] transition-colors duration-500">
+
                             <img src="./catalog-purple_icon.png" alt="catalog" className="h-8" />
                             <span className="text-2xl text-[--color-yellow]">Каталог товарів</span>
                         </button>
@@ -45,16 +48,18 @@ export default function SidePanel({ isOpen, onClose }) {
                             <p className="mb-3 text-lg text-center">
                                 Увійдіть в особистий кабінет, щоб отримувати бонуси, знижки і рекомендації.
                             </p>
-                            <button
+                            <Link
+                            to="/login"
                                 className="
+                                text-center
                   block w-full max-w-[300px] mx-auto py-2
                   bg-[--color-purple] border-[3px] border-[--color-yellow]
                   rounded-2xl text-2xl font-semibold text-[--color-yellow]
-                  transition-colors hover:bg-opacity-90
+                  hover:bg-[#9462D2] transition-colors duration-500
                 "
                             >
                                 Вхід
-                            </button>
+                            </Link>
                         </div>
                     </div>
 

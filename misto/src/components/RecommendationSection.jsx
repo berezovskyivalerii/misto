@@ -1,53 +1,53 @@
 import { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import Card from './Card';
+import CardSmall from './CardSmall';
 
 export default function RecommendationSection({ items }) {
-    const containerRef = useRef(null);
-
-    const scrollByWidth = (direction = 'right') => {
-        const container = containerRef.current;
-        if (!container) return;
-        const amount = container.clientWidth;
-        container.scrollBy({
-            left: direction === 'right' ? amount : -amount,
+    const listRef = useRef(null);
+    const scroll = dir => {
+        const box = listRef.current;
+        if (!box) return;
+        box.scrollBy({
+            left: dir === 'right' ? box.clientWidth : -box.clientWidth,
             behavior: 'smooth',
         });
     };
 
     return (
-        <section className="relative mt-8">
-            <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-semibold">Рекомендації</h2>
-            </div>
-
-            <div className="relative">
+        <section className="mt-8">
+            <h2 className="text-xl mb-2 tracking-wider">Рекомендації</h2>
+            <div className="relative overflow-hidden">
                 <div
-                    ref={containerRef}
-                    className="flex gap-4 overflow-x-auto scroll-smooth hide-scrollbar"
+                    className="flex gap-5 overflow-x-auto overflow-y-hidden scroll-smooth hide-scrollbar"
                 >
-                    {items.map(item => (
-                        <div key={item.id} className="shrink-0 w-60">
-                            <Card {...item} />
+                    {items.map(it => (
+                        <div
+                            key={it.id}
+                            className="w-[165px] sm:w-[190px]"
+                        >
+                            <CardSmall {...it} />
                         </div>
                     ))}
                 </div>
 
-
                 <button
-                    onClick={() => scrollByWidth('left')}
-                    className="h-12 w-12 absolute left-4 top-1/2 -translate-y-1/2 flex items-center justify-center p-4 bg-[--color-yellow] rounded-full shadow"
+                    onClick={() => scroll('left')}
+                    className="hidden sm:flex absolute left-2 top-1/2 -translate-y-1/2
+                 h-10 w-10 items-center justify-center
+                 bg-[--color-yellow] rounded-full shadow"
                 >
                     <ChevronLeft size={18} />
                 </button>
-
                 <button
-                    onClick={() => scrollByWidth('right')}
-                    className="h-12 w-12 absolute right-4 top-1/2 -translate-y-1/2 flex items-center justify-center bg-[--color-yellow] rounded-full shadow"
+                    onClick={() => scroll('right')}
+                    className="hidden sm:flex absolute right-2 top-1/2 -translate-y-1/2
+                 h-10 w-10 items-center justify-center
+                 bg-[--color-yellow] rounded-full shadow"
                 >
                     <ChevronRight size={18} />
                 </button>
             </div>
         </section>
+
     );
 }

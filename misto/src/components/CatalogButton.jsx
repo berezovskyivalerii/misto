@@ -11,6 +11,7 @@ export default function CatalogButton({ onClick }) {
                 border-2 border-[--color-brown]
                 text-[--color-brown] text-2xl font-medium
                 rounded-[15px]
+                hover:bg-[--color-yellow] transition-colors duration-500
             "
         >
             <img src="./catalog.png" alt="catalog" className="w-[30px] h-[30px]" />

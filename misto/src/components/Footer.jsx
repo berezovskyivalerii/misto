@@ -64,7 +64,7 @@ export default function Footer() {
                 </div>
 
                 {/* Come back */}
-                <div className="flex flex-col justify-between items-center h-full">
+                <div className="hidden sm:flex flex-col justify-between items-center h-full">
                     <button
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         className="

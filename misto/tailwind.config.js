@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"PT Sans"', 'sans-serif'],
+        sans: ['PPObjectSans', 'ui-sans-serif', 'system-ui'], 
       },
       keyframes: {
         marquee: {
