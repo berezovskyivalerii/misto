@@ -14,7 +14,7 @@ export default function Slider({ slides = [] }) {
             aspect-[400/195]    
             min-h-[195px]       
             sm:aspect-[1310/300]
-            rounded-xl overflow-hidden bg-stone-400
+            rounded-[25px] overflow-hidden bg-stone-400
         "
         >
             <div

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Marquee from "./Marquee";
 import SearchBar from "./SearchBar";
 import CatalogButton from "./CatalogButton";
@@ -26,7 +27,9 @@ export default function Header() {
                         className="h-6 sm:h-7 cursor-pointer"
                         onClick={toggleMenu}
                     />
-                    <img src="./misto_logo.png" alt="logo" className="h-6 sm:h-10" />
+                    <Link to="/">
+                        <img src="./misto_logo.png" alt="logo" className="h-6 sm:h-10" />
+                    </Link>
                 </div>
 
                 <div className="flex items-center gap-4 sm:gap-10 w-full flex-1">

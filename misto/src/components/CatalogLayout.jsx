@@ -5,9 +5,9 @@ import OfferSection from './OfferSection';
 import { categories, recommendations, offers } from '../db/data';
 
 const sliderImages  = [
-  './gray16x9.jpg',
-  './yellow1920x540.webp',
-  './red1920x540.jpg',
+  './poster1.png',
+  './poster2.png',
+  './poster3.png',
 ];
 
 export default function CatalogLayout() {
