@@ -5,6 +5,7 @@ import LoginPage from '../pages/LoginPage'
 import RegisterPage from '../pages/RegisterPage'
 import Product from '../components/Product'
 import { PageNotFound } from '../pages/PageNotFound'
+import ShoppingCart from '../components/ShoppingCart'
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const router = createBrowserRouter([
@@ -14,7 +15,8 @@ export const router = createBrowserRouter([
         children: [
             { index: true, element: <CatalogLayout /> },
             { path: 'catalog', element: <CatalogLayout /> },
-            { path: 'product', element: <Product />}
+            { path: 'product', element: <Product />},
+            { path: 'shopping-cart', element: <ShoppingCart /> }
         ],
     },
     { path: '/login', element: <LoginPage /> },

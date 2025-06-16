@@ -104,10 +104,11 @@ function ProductPreview({ stars, product }) {
                             <img src="./like_icon.png" alt="like" className="lg:h-7 lg:w-7 flex-shrink-0" />
                             <span className="hidden lg:block">Бажане</span>
                         </button>
-                        <button className="flex flex-1 px-4 max-w-[250px] items-center justify-center gap-2 rounded-xl bg-purple-500 max-h-[70px] text-white transition hover:bg-purple-600">
+
+                        <Link to='/shopping-cart' className="flex flex-1 px-4 max-w-[250px] items-center justify-center gap-2 rounded-xl bg-purple-500 max-h-[70px] text-white transition hover:bg-purple-600">
                             <img src="./shopping-w.png" alt="cart" className="lg:h-7 lg:w-7 flex-shrink-0" />
                             <span className="hidden lg:block">Купити</span>
-                        </button>
+                        </Link>
                     </div>
                 </div>
 
@@ -208,7 +209,7 @@ function ProductSpecs({
             <div className="
                 w-full
                 rounded-2xl border-[3px] border-[--color-yellow]
-                px-5 lg:px-12 py-8 box-border space-y-3
+                px-5 lg:px-12 py-8 box-border space-y-3 lg:flex lg:flex-row gap-8
             ">
                 <h2 className="text-[28px] lg:text-[44px] max-w-[550px] w-full font-extrabold text-[#1E1E1E]">
                     {title}
@@ -270,9 +271,9 @@ function ProductReviews({ reviews = [], visibleCount = 2 }) {
             <div className="
                 w-full
                 rounded-2xl border-[3px] border-[--color-yellow]
-                px-5 lg:px-12 py-8 box-border space-y-3
+                px-5 lg:px-12 py-8 box-border space-y-3 lg:flex lg:flex-row gap-8
             ">
-                <div className="flex flex-col max-w-[550px] w-full">
+                <div className="flex flex-col max-w-[550px] w-full mb-6 lg:mb-0">
                     <h2 className="text-[28px] lg:text-[44px] font-extrabold text-[#1E1E1E] mb-4">
                         Відгуки
                     </h2>
@@ -346,8 +347,8 @@ function MayInterestSection({
                 rounded-2xl border-[3px] border-[--color-yellow]
                 px-5 lg:px-12 py-8 box-border space-y-3
             ">
-                <div className="flex flex-col  w-full">
-                    <h2 className="text-[28px] lg:text-[44px] font-extrabold text-[#1E1E1E] mb-4">
+                <div className="flex flex-col lg:flex-row  w-full gap-8">
+                    <h2 className="text-[28px] max-w-[550px] w-full  lg:text-[44px] font-extrabold text-[#1E1E1E] mb-4">
                         {title}
                     </h2>
 

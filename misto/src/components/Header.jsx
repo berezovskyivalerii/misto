@@ -4,11 +4,13 @@ import Marquee from "./Marquee";
 import SearchBar from "./SearchBar";
 import CatalogButton from "./CatalogButton";
 import SidePanel from "./SidePanel";
+import CartModal from './CartModal';
 
 const text_marquee = ['Безкоштовна доставка від 300 грн*\u00A0']
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isCartOpen, setIsCartOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -42,9 +44,19 @@ export default function Header() {
 
                     <img src="./maleuser_icon.png" alt="user" className="h-12 shrink-0 cursor-pointer hover:bg-[--color-yellow] p-1 transition-colors duration-500 rounded-md hidden sm:block" />
                     <img src="./scales_icon.png" alt="compare" className="h-12 shrink-0 cursor-pointer hover:bg-[--color-yellow] p-1 transition-colors duration-500 rounded-md hidden sm:block" />
-                    <img src="./shopping_icon.png" alt="cart" className="h-12 shrink-0 cursor-pointer hover:bg-[--color-yellow] p-1 transition-colors duration-500 rounded-md" />
+                    <img
+                        src="./shopping_icon.png"
+                        alt="cart"
+                        onClick={() => setIsCartOpen(true)}
+                        className="h-12 shrink-0 cursor-pointer hover:bg-[--color-yellow] p-1 transition-colors duration-500 rounded-md"
+                    />
+                    {isCartOpen && (
+                        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center px-2"></div>
+                    )}
                 </div>
             </div>
+            <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+
         </header>
     );
 }

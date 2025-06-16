@@ -34,7 +34,7 @@ export default function CardSmall({
                 <div className="flex items-center justify-between mt-auto">
                     <div className="flex flex-col">
                         {oldPrice && (
-                            <span className="text-[8px] sm:text-[8px] line-through text-gray-900 tracking-wide">
+                            <span className="text-[10px] sm:text-[10px] line-through text-gray-900 tracking-wide">
                                 {oldPrice}₴
                             </span>
                         )}
