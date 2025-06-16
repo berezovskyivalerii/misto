@@ -4,7 +4,6 @@ export default function CartModal({ isOpen, onClose }) {
     return (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center px-4">
             <div className="h-[444px] lg:h-[660px] relative bg-white rounded-[30px] shadow-2xl max-w-[1200px] w-full max-h-[90vh] overflow-auto p-6 lg:p-10">
-                {/* Кнопка закрытия */}
                 <h2 className="text-[32px] lg:text-[44px] font-extrabold text-[#1E1E1E] mb-4">
                     Кошик
                 </h2>

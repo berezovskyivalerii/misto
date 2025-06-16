@@ -5,16 +5,19 @@ import SearchBar from "./SearchBar";
 import CatalogButton from "./CatalogButton";
 import SidePanel from "./SidePanel";
 import CartModal from './CartModal';
-
+import CatalogModal from './CatalogModal';
+import { Catalog } from '../db/data';
 const text_marquee = ['Безкоштовна доставка від 300 грн*\u00A0']
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
+    const [isCatalogOpen, setCatalog] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+    const toggleCatalog = () => setCatalog((prev) => !prev);
 
     return (
         <header className="relative shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
@@ -36,7 +39,7 @@ export default function Header() {
 
                 <div className="flex items-center gap-4 sm:gap-10 w-full flex-1">
                     <div className="ml-auto mr-2 sm:mr-5 hidden sm:block">
-                        <CatalogButton />
+                        <CatalogButton onClick={toggleCatalog} />
                     </div>
                     <div className="flex-1 min-w-[8rem] sm:min-w-[12rem] max-w-[790px]">
                         <SearchBar />
@@ -55,6 +58,7 @@ export default function Header() {
                     )}
                 </div>
             </div>
+            <CatalogModal categories={Catalog} open={isCatalogOpen} onClose={() => setCatalog(false)} />
             <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
 
         </header>
