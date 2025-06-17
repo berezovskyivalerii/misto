@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'PPObjectSans';
   src: url('./fonts/PPObjectSans-Regular.woff') format('woff');
@@ -28,9 +27,7 @@
   }
 }
 
-@layer components {
-
-}
+@layer components {}
 
 @layer utilities {
   .accent-purple {
@@ -53,4 +50,12 @@
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  overflow-y: scroll;
 }

@@ -1,14 +1,11 @@
-// src/components/OfferSection.jsx
 import { useState, useEffect } from 'react';
 import Card from './Card';
 
-const STEP = 8;            // 4 ряди × 2 колонки = 8 карток
+const STEP = 8;
 
 export default function OfferSection({ items }) {
-  /** скільки карток зараз показуємо */
   const [visible, setVisible] = useState(STEP);
 
-  /** якщо ширина ≥ 640 px, одразу показуємо всі */
   useEffect(() => {
     const update = () =>
       window.innerWidth >= 640 ? setVisible(items.length) : setVisible(STEP);

@@ -3,10 +3,15 @@ import { Link } from 'react-router-dom'
 import { useMemo } from 'react';
 import Comment from './Comment';
 import CardSmall from './CardSmall';
+import { useCart } from '../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 function ProductPreview({ stars, product }) {
     const [size, setSize] = useState(product.sizes[2]);
     const [color, setColor] = useState(product.colors[0]);
+
+    const { add } = useCart();
+    const navigate = useNavigate();
 
     return (
         <section className="flex flex-col lg:flex-row gap-5 lg:gap-8 mt-0 lg:mt-8 px-4 lg:px-0">
@@ -18,7 +23,6 @@ function ProductPreview({ stars, product }) {
                     className="mx-auto aspect-square max-h-[650px] w-auto object-contain select-none"
                 />
 
-                {/* discount badge */}
                 {product.discount && (
                     <div className="absolute right-6 top-6 flex h-36 w-36 -rotate-12 items-center justify-center rounded-full bg-rose-500 text-4xl font-bold text-white">
                         -{product.discount}%
@@ -28,11 +32,8 @@ function ProductPreview({ stars, product }) {
 
             {/* ======== RIGHT: DETAILS ======== */}
             <div className="w-full flex flex-col gap-5 lg:max-w-[980px]">
-                {/* Title */}
                 <div className="flex flex-col rounded-3xl border-[3px] border-orange-400 gap-4 lg:gap-10 p-6 lg:p-6">
                     <h1 className="text-lg font-semibold leading-snug lg:text-xl">{product.title}</h1>
-
-                    {/* Rating + reviews */}
                     <div className="flex items-center gap-2">
                         {stars}
                         <div className="flex items-center ml-5">
@@ -40,9 +41,9 @@ function ProductPreview({ stars, product }) {
                             <span className="text-[14px] sm:text-sm text-gray-500 ml-1 sm:ml-2">
                                 {product.reviews} відгук
                             </span>
-                        </div>                    </div>
+                        </div>
+                    </div>
 
-                    {/* Size selector */}
                     <div>
                         <p className="mb-2 font-medium">
                             Розмір: <span className="font-semibold">{size}</span>
@@ -105,10 +106,17 @@ function ProductPreview({ stars, product }) {
                             <span className="hidden lg:block">Бажане</span>
                         </button>
 
-                        <Link to='/shopping-cart' className="flex flex-1 px-4 max-w-[250px] items-center justify-center gap-2 rounded-xl bg-purple-500 max-h-[70px] text-white transition hover:bg-purple-600">
+                        <button
+                            onClick={() => {
+                                add(product);
+                                navigate('/shopping-cart');
+                            }}
+                            className="flex flex-1 max-w-[250px] items-center justify-center gap-2 rounded-xl
+             bg-purple-500 px-4 max-h-[70px] text-white transition hover:bg-purple-600"
+                        >
                             <img src="./shopping-w.png" alt="cart" className="lg:h-7 lg:w-7 flex-shrink-0" />
                             <span className="hidden lg:block">Купити</span>
-                        </Link>
+                        </button>
                     </div>
                 </div>
 

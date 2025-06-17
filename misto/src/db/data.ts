@@ -8,7 +8,7 @@ export const recommendations = Array.from({ length: 20 }, (_, i) => ({
     price: 1000,
 }))
 
-export const offers = Array.from({ length: 20 }, (_, i) => ({
+export const offers = Array.from({ length: 40 }, (_, i) => ({
     id: `rec-${i + 1}`,
     hoverImage: './popmart_card.png',
     image: './test_img.png',

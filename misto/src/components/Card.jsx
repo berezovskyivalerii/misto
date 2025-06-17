@@ -37,7 +37,7 @@ export default function Card({
   return (
     <div className="group relative inline-block">
       <div className="sm:transition-transform sm:duration-300 sm:hover:scale-105 sm:hover:shadow-lg sm:hover:absolute sm:hover:z-40
-          overflow-hidden">
+          sm:overflow-hidden">
         <div
           className="
           flex flex-col bg-white border border-[#5F5F5F]
@@ -109,7 +109,6 @@ export default function Card({
               </button>
             </div>
 
-            {/* Collapsible description */}
             {description && (
               <p
                 className="
