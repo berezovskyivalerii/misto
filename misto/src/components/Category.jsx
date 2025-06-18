@@ -65,12 +65,12 @@ export default function Category({ filters = BALL_FILTERS }) {
                 />
                 <aside
                     className={`
-    fixed top-0 left-0 z-50 w-[360px] max-w-full
-    h-full
-    bg-white p-6 shadow-xl overflow-y-auto
-    transform transition-transform duration-300
-    ${mobileOpen ? 'translate-x-0' : '-translate-x-full'}
-  `}
+                        fixed top-0 left-0 z-50 w-[360px] max-w-full
+                        h-full
+                        bg-white p-6 shadow-xl overflow-y-auto
+                        transform transition-transform duration-300
+                        ${mobileOpen ? 'translate-x-0' : '-translate-x-full'}
+                    `}
                 >
                     <FilterPanel filters={BALL_FILTERS} onClose={() => setMobileOpen(false)} />
                 </aside>
