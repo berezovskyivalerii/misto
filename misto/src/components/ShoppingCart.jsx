@@ -129,7 +129,7 @@ function CheckoutSummary({ quantity, price }) {
             </div>
 
             <Link to="/">
-                <button className="w-full bg-[--color-purple] hover:bg-purple-600 text-white text-xl lg:text-2xl font-medium py-3 rounded-xl transition">
+                <button className="w-full bg-[--color-purple] hover:bg-purple-600 hover:text-[--color-yellow] text-white text-xl lg:text-2xl font-medium py-3 rounded-xl">
                     Замовити
                 </button>
             </Link>

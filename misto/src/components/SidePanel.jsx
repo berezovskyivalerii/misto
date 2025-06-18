@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Catalog } from '../db/data';
+import CatalogWrapper from './CatalogWrapper';
 
 export default function SidePanel({ isOpen, onClose }) {
     const [isHelpOpen, setHelpOpen] = useState(false);
+    const [isCatalogOpen, setCatalogOpen] = useState(false);
+    const toggleCatalog = () => setCatalogOpen((p) => !p);
 
     return (
         <aside>
@@ -28,7 +32,8 @@ export default function SidePanel({ isOpen, onClose }) {
                         <button
                             className="flex items-center bg-[--color-purple] rounded-2xl
                                         border-[3px] border-[--color-yellow] p-4 w-full justify-center gap-3
-                                        hover:bg-[#9462D2] transition-colors duration-500">
+                                        hover:bg-[#9462D2] transition-colors duration-500"
+                            onClick={toggleCatalog} >
 
                             <img src="./catalog-purple_icon.png" alt="catalog" className="h-8" />
                             <span className="text-2xl text-[--color-yellow]">Каталог товарів</span>
@@ -48,14 +53,13 @@ export default function SidePanel({ isOpen, onClose }) {
                                 Увійдіть в особистий кабінет, щоб отримувати бонуси, знижки і рекомендації.
                             </p>
                             <Link
-                            to="/login"
+                                to="/login"
                                 className="
-                                text-center
-                  block w-full max-w-[300px] mx-auto py-2
-                  bg-[--color-purple] border-[3px] border-[--color-yellow]
-                  rounded-2xl text-2xl font-semibold text-[--color-yellow]
-                  hover:bg-[#9462D2] transition-colors duration-500
-                "
+                                    text-center block w-full max-w-[300px] mx-auto py-2
+                                    bg-[--color-purple] border-[3px] border-[--color-yellow]
+                                    rounded-2xl text-2xl font-semibold text-[--color-yellow]
+                                    hover:bg-[#9462D2] transition-colors duration-500
+                                "
                             >
                                 Вхід
                             </Link>
@@ -189,6 +193,8 @@ export default function SidePanel({ isOpen, onClose }) {
                     onClick={onClose}
                 />
             )}
+            <CatalogWrapper categories={Catalog} open={isCatalogOpen} onClose={() => setCatalogOpen(false)} />
+
         </aside>
     );
 }

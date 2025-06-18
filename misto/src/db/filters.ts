@@ -39,8 +39,6 @@ export const BALL_FILTERS: readonly FilterGroup[] = [
       { value: 'wilson',   label: 'Wilson' },
     ],
   },
-
-  /* ---------- цiна ---------- */
   {
     id: 'price',
     title: 'Ціна, грн',
@@ -48,8 +46,6 @@ export const BALL_FILTERS: readonly FilterGroup[] = [
     min: 1,
     max: 10_000,
   },
-
-  /* ---------- вид мʼяча ---------- */
   {
     id: 'kind',
     title: 'Вид',

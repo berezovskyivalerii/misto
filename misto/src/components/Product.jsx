@@ -55,7 +55,7 @@ function ProductPreview({ stars, product }) {
                                     onClick={() => setSize(s)}
                                     className={`px-6 rounded border py-1 text-sm ${size === s
                                         ? 'border-purple-500 bg-purple-100 text-purple-900'
-                                        : 'border-gray-300 hover:bg-gray-100'
+                                        : 'border-gray-300 hover:bg-[--color-yellow]'
                                         }`}
                                 >
                                     {s}
@@ -74,7 +74,7 @@ function ProductPreview({ stars, product }) {
                                 <div
                                     key={c.name}
                                     onClick={() => setColor(c)}
-                                    className={`relative cursor-pointer rounded-lg p-1 ${color.name === c.name ? 'border-2 border-purple-500' : 'border'
+                                    className={`hover:bg-[--color-yellow] relative cursor-pointer rounded-lg p-1 ${color.name === c.name ? 'border-2 border-purple-500' : 'border'
                                         }`}
                                 >
                                     <img
@@ -101,7 +101,7 @@ function ProductPreview({ stars, product }) {
 
                     {/* Buttons */}
                     <div className="flex lg:w-full max-w-[530px] gap-4 justify-between sm:flex-row">
-                        <button className="flex flex-1 px-4 max-w-[250px] items-center justify-center gap-2 rounded-xl border-2 border-purple-500 max-h-[70px]  text-purple-600 transition hover:bg-purple-50">
+                        <button className="flex flex-1 px-4 max-w-[250px] items-center justify-center gap-2 rounded-xl border-2 border-purple-500 max-h-[70px] text-purple-600 hover:bg-[--color-yellow]">
                             <img src="./like_icon.png" alt="like" className="lg:h-7 lg:w-7 flex-shrink-0" />
                             <span className="hidden lg:block">Бажане</span>
                         </button>
@@ -112,7 +112,7 @@ function ProductPreview({ stars, product }) {
                                 navigate('/shopping-cart');
                             }}
                             className="flex flex-1 max-w-[250px] items-center justify-center gap-2 rounded-xl
-             bg-purple-500 px-4 max-h-[70px] text-white transition hover:bg-purple-600"
+                                    bg-purple-500 px-4 max-h-[70px] text-white transition hover:bg-[--color-yellow]"
                         >
                             <img src="./shopping-w.png" alt="cart" className="lg:h-7 lg:w-7 flex-shrink-0" />
                             <span className="hidden lg:block">Купити</span>
@@ -124,16 +124,16 @@ function ProductPreview({ stars, product }) {
                     <p className="mb-4 text-lg font-medium lg:mb-0">Доставка:</p>
 
                     <div className="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        <button className="flex items-center gap-3 border-2 border-[#5F5F5F] rounded-[10px] justify-center">
+                        <button className="flex items-center gap-3 border-2 border-[#5F5F5F] rounded-[10px] justify-center hover:bg-[--color-yellow]">
                             <img src="transit.png" alt="Delivery" className="h-10 object-contain" />
                             <p>Кур'єр</p>
                         </button>
 
-                        <button className="delivery-card">
+                        <button className="delivery-card hover:bg-[--color-yellow]">
                             <img src="novaposhta.png" alt="Нова Пошта" className="h-8 object-contain" />
                         </button>
 
-                        <button className="delivery-card">
+                        <button className="delivery-card hover:bg-[--color-yellow]">
                             <img src="ukrposhta.png" alt="Укрпошта" className="h-8 object-contain" />
                         </button>
                     </div>
@@ -151,7 +151,7 @@ function ProductPath({ path }) {
             </Link>
             {
                 Array.from({ length: path.length }).map((_, i) => (
-                    <p className="text-lg"> <span className="mx-2 text-xl">/</span>{path[i]}</p>
+                    <p className="text-lg hover:text-[--color-purple] hover:underline"> <span className="mx-2 text-xl">/</span>{path[i]}</p>
                 ))
             }
         </div>
@@ -161,10 +161,10 @@ function ProductPath({ path }) {
 function ProductNav({ reviews }) {
     return (
         <div className="hidden lg:flex flex-row gap-10 bg-[--color-yellow] py-[13px] px-8 rounded-2xl">
-            <p className="tracking-wide cursor-pointer">Усе про товар</p>
-            <p className="tracking-wide cursor-pointer">Характеристики</p>
-            <p className="tracking-wide cursor-pointer">Відгуки ({reviews})</p>
-            <p className="tracking-wide cursor-pointer">Може зацікавити</p>
+            <p className="tracking-wide cursor-pointer hover:text-[--color-purple] hover:underline">Усе про товар</p>
+            <p className="tracking-wide cursor-pointer hover:text-[--color-purple] hover:underline">Характеристики</p>
+            <p className="tracking-wide cursor-pointer hover:text-[--color-purple] hover:underline">Відгуки ({reviews})</p>
+            <p className="tracking-wide cursor-pointer hover:text-[--color-purple] hover:underline">Може зацікавити</p>
         </div>
     )
 }

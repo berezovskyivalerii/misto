@@ -27,7 +27,12 @@
   }
 }
 
-@layer components {}
+@layer components {
+  .pagination-arrow {
+    @apply h-9 w-16 flex items-center justify-center rounded-md border border-[#5F5F5F] hover:bg-gray-100 transition-colors;
+  }
+
+}
 
 @layer utilities {
   .accent-purple {

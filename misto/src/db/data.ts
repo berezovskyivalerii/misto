@@ -1,26 +1,3 @@
-export const recommendations = Array.from({ length: 20 }, (_, i) => ({
-    id: `rec-${i + 1}`,
-    image: './test_img.png',
-    title: `Іграшка сюрприз Pop Mart Плюшевый брелок Mart Big...`,
-    rating: Math.floor(Math.random() * 5) + 1,
-    reviews: Math.floor(Math.random() * 100) + 1,
-    oldPrice: 2000,
-    price: 1000,
-}))
-
-export const offers = Array.from({ length: 40 }, (_, i) => ({
-    id: `rec-${i + 1}`,
-    hoverImage: './popmart_card.png',
-    image: './test_img.png',
-    description:
-        'М`яка іграшка-сюрприз Big into Energy Art The Monsters - стильний аксесуар для рюкзака, сумки або як подарунок!  Ця іграшка стане чудовим...',
-    title: `Іграшка-сюрприз Pop Mart Плюшевый брелок Mart Big...`,
-    rating: Math.floor(Math.random() * 5) + 1,
-    reviews: Math.floor(Math.random() * 100) + 1,
-    oldPrice: 999,
-    price: 799,
-}))
-
 export const categories = [
     {
         label: 'Ноутбуки і комп’ютери',

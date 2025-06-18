@@ -10,7 +10,7 @@ export default function CardSmall({
     const [shopped, setShopped] = useState(false);
 
     return (
-        <div className="relative w-[165px] sm:w-[190px] max-h-[235px] sm:max-h-[270px] bg-white border border-[#5F5F5F]">
+        <div className="group relative w-[165px] sm:w-[190px] max-h-[235px] sm:max-h-[270px] bg-white border border-[#5F5F5F]">
             <img
                 src={liked ? './like-filled_icon.png' : './like_icon.png'}
                 alt="like"
@@ -27,7 +27,8 @@ export default function CardSmall({
             </div>
 
             <div className="p-3 sm:p-2 flex flex-col gap-1">
-                <h3 className="text-[11px] sm:text-sm line-clamp-2 font-sans tracking-wide">
+                <h3 className="text-[11px] sm:text-sm line-clamp-2 font-sans tracking-wide
+                               group-hover:text-[--color-purple] group-hover:underline">
                     {title}
                 </h3>
 
@@ -42,11 +43,11 @@ export default function CardSmall({
                     </div>
 
                     <button className="p-1 sm:p-2">
-                        <img 
-                            src={shopped ? './shopping-filled_icon.png' : './purple-shopping_icon.png'} 
-                            alt="add to cart" 
-                            onClick={() => setShopped(!shopped)} 
-                            className="h-7 w-7 sm:h-8 sm:w-8 hover:bg-slate-400 rounded-md " 
+                        <img
+                            src={shopped ? './shopping-filled_icon.png' : './purple-shopping_icon.png'}
+                            alt="add to cart"
+                            onClick={() => setShopped(!shopped)}
+                            className="h-7 w-7 sm:h-8 sm:w-8 hover:bg-slate-400 rounded-md "
                         />
                     </button>
                 </div>

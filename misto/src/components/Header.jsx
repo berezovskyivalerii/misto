@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Marquee from "./Marquee";
 import SearchBar from "./SearchBar";
 import CatalogButton from "./CatalogButton";
 import SidePanel from "./SidePanel";
 import CartModal from './CartModal';
 import { useCart } from '../context/CartContext';
-import CatalogModal from './CatalogModal';
+import CatalogWrapper from './CatalogWrapper';
 import { Catalog } from '../db/data';
-const text_marquee = ['Безкоштовна доставка від 300 грн*\u00A0']
 
 export default function Header() {
     const { items } = useCart();
@@ -26,7 +24,6 @@ export default function Header() {
         <header className="relative shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
             <SidePanel isOpen={isMenuOpen} onClose={toggleMenu} />
 
-            <Marquee phrases={text_marquee} />
             <div className="mx-auto max-w-[110rem] px-5 py-3 flex">
                 <div className="flex items-center gap-4 sm:gap-16 pr-4 sm:pr-12">
                     <img
@@ -61,7 +58,7 @@ export default function Header() {
                     )}
                 </div>
             </div>
-            <CatalogModal categories={Catalog} open={isCatalogOpen} onClose={() => setCatalogOpen(false)} />
+            <CatalogWrapper categories={Catalog} open={isCatalogOpen} onClose={() => setCatalogOpen(false)} />
             <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
 
         </header>

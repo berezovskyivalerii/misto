@@ -3,7 +3,7 @@ import { useState } from 'react';
 type ColumnGroup = { subtitle: string; items: string[] };
 type Category = { id: string; title: string; icon: string; columns: ColumnGroup[] };
 
-export default function CatalogModal({
+export default function CatalogDesktop({
     categories,
     open,
     onClose,
