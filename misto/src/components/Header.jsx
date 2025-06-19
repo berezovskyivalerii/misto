@@ -21,7 +21,7 @@ export default function Header() {
     const toggleCatalog = () => setCatalogOpen((p) => !p);
 
     return (
-        <header className="relative shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+        <header className="sticky top-0 z-50 bg-white shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
             <SidePanel isOpen={isMenuOpen} onClose={toggleMenu} />
 
             <div className="mx-auto max-w-[110rem] px-5 py-3 flex">

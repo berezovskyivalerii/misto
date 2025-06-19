@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Card from './Card';
 
 const STEP = 8;
@@ -14,9 +15,7 @@ export default function OfferSection({ items }) {
     return () => window.removeEventListener('resize', update);
   }, [items.length]);
 
-  const showMore = () =>
-    setVisible(v => Math.min(v + STEP, items.length));
-
+  const showMore = () => setVisible(v => Math.min(v + STEP, items.length));
   const hasMore = visible < items.length;
 
   return (
@@ -25,7 +24,9 @@ export default function OfferSection({ items }) {
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4">
         {items.slice(0, visible).map(it => (
-          <Card key={it.id} {...it} />
+          <Link key={it.id} to={it.path} className="contents">
+            <Card {...it} />
+          </Link>
         ))}
       </div>
 

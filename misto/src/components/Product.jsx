@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
 import { useMemo } from 'react';
 import Comment from './Comment';
 import CardSmall from './CardSmall';
 import { useCart } from '../context/CartContext';
-import { useNavigate } from 'react-router-dom';
 
 function ProductPreview({ stars, product }) {
     const [size, setSize] = useState(product.sizes[2]);
@@ -143,30 +142,61 @@ function ProductPreview({ stars, product }) {
     );
 }
 
+import { ChevronLeft } from 'lucide-react';
+
 function ProductPath({ path }) {
     return (
-        <div className="hidden lg:flex flex-row items-center">
-            <Link to="/">
-                <img src="./home_icon.png" alt="home" className="w-auto h-9" />
-            </Link>
-            {
-                Array.from({ length: path.length }).map((_, i) => (
-                    <p className="text-lg hover:text-[--color-purple] hover:underline"> <span className="mx-2 text-xl">/</span>{path[i]}</p>
-                ))
-            }
-        </div>
-    )
+        <>
+            <div className="flex lg:hidden items-center gap-2 mb-4 pl-4">
+                <button>
+                    <ChevronLeft size={20} />
+                </button>
+
+                <Link to='/category' className="truncate text-base font-medium">
+                    {path[path.length - 1]}
+                </Link>
+            </div>
+
+            <div className="hidden lg:flex flex-row items-center">
+                <Link to="/">
+                    <img src="./home_icon.png" alt="home" className="w-auto h-9" />
+                </Link>
+
+                {path.map((p) => (
+                    <p
+                        key={p}
+                        className="text-lg hover:text-[--color-purple] hover:underline"
+                    >
+                        <span className="mx-2 text-xl">/</span>
+                        {p}
+                    </p>
+                ))}
+            </div>
+        </>
+    );
 }
 
 function ProductNav({ reviews }) {
+    const nav = [
+        { id: 'about', label: 'Усе про товар' },
+        { id: 'specs', label: 'Характеристики' },
+        { id: 'reviews', label: `Відгуки (${reviews})` },
+        { id: 'interest', label: 'Може зацікавити' },
+    ];
+
     return (
-        <div className="hidden lg:flex flex-row gap-10 bg-[--color-yellow] py-[13px] px-8 rounded-2xl">
-            <p className="tracking-wide cursor-pointer hover:text-[--color-purple] hover:underline">Усе про товар</p>
-            <p className="tracking-wide cursor-pointer hover:text-[--color-purple] hover:underline">Характеристики</p>
-            <p className="tracking-wide cursor-pointer hover:text-[--color-purple] hover:underline">Відгуки ({reviews})</p>
-            <p className="tracking-wide cursor-pointer hover:text-[--color-purple] hover:underline">Може зацікавити</p>
+        <div className="hidden lg:flex gap-10 bg-[--color-yellow] py-[13px] px-8 rounded-2xl">
+            {nav.map(({ id, label }) => (
+                <a
+                    key={id}
+                    href={`#${id}`}
+                    className="tracking-wide hover:text-[--color-purple] hover:underline"
+                >
+                    {label}
+                </a>
+            ))}
         </div>
-    )
+    );
 }
 
 function ProductDescription({
@@ -175,7 +205,7 @@ function ProductDescription({
     features = [],
 }) {
     return (
-        <section className="px-4 lg:px-0">
+        <section id='about' className="scroll-mt-[120px] px-4 lg:px-0">
             <div className="
                 w-full
                 rounded-2xl border-[3px] border-[--color-yellow]
@@ -213,7 +243,7 @@ function ProductSpecs({
     const visible = open ? specs : specs.slice(0, previewRows);
 
     return (
-        <section className="px-4 lg:px-0">
+        <section id='specs' className="scroll-mt-[120px] px-4 lg:px-0">
             <div className="
                 w-full
                 rounded-2xl border-[3px] border-[--color-yellow]
@@ -275,7 +305,7 @@ function ProductReviews({ reviews = [], visibleCount = 2 }) {
     const maxBucket = Math.max(...buckets, 1);
 
     return (
-        <section className="px-4 lg:px-0">
+        <section id='reviews' className="scroll-mt-[120px] px-4 lg:px-0">
             <div className="
                 w-full
                 rounded-2xl border-[3px] border-[--color-yellow]
@@ -349,7 +379,7 @@ function MayInterestSection({
     items = [],
 }) {
     return (
-        <section className="px-4 lg:px-0">
+        <section id="interest" className="px-4 lg:px-0">
             <div className="
                 w-full
                 rounded-2xl border-[3px] border-[--color-yellow]

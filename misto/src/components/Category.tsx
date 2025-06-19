@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import FilterPanel from './FilterPanel';
 import SortSelect from './SortSelect';
 import Card from './Card';
-import { offers } from '../db/cards';
+import { balls } from '../db/cards';
 import { BALL_FILTERS } from '../db/filters';
 
 const PER_PAGE = 16;
@@ -88,9 +88,9 @@ export default function Category({ filters = BALL_FILTERS }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [page, setPage] = useState(1);
 
-  const totalPages = Math.ceil(offers.length / PER_PAGE);
-  const pagedOffers = useMemo(
-    () => offers.slice((page - 1) * PER_PAGE, page * PER_PAGE),
+  const totalPages = Math.ceil(balls.length / PER_PAGE);
+  const pagedballs = useMemo(
+    () => balls.slice((page - 1) * PER_PAGE, page * PER_PAGE),
     [page]
   );
 
@@ -102,7 +102,7 @@ export default function Category({ filters = BALL_FILTERS }) {
       <section className="md:border-b-2 mt-5 py-3 md:flex md:items-end md:justify-between">
         <div>
           <h1 className="text-3xl font-extrabold">Мʼячі</h1>
-          <p className="mt-4 lg:mt-10 text-sm">Знайдено {offers.length} товарів</p>
+          <p className="mt-4 lg:mt-10 text-sm">Знайдено {balls.length} товарів</p>
         </div>
         <div className="hidden md:block">
           <SortSelect />
@@ -148,11 +148,15 @@ export default function Category({ filters = BALL_FILTERS }) {
 
         {/* cards */}
         <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-[repeat(4,312px)] justify-center">
-          {pagedOffers.map((p) => (
-            <Card key={p.id} {...p} />
+          {pagedballs.map(p => (
+            <Link key={p.id} to={p.path ?? '/notfound'} className="contents">
+              {/* `className="contents"` оставляет сетку неизменной */}
+              <Card {...p} />
+            </Link>
           ))}
         </div>
       </div>
+
 
       {/* pagination */}
       <Pagination page={page} total={totalPages} onPageChange={setPage} />

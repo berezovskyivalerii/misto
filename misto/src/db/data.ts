@@ -2,70 +2,87 @@ export const categories = [
     {
         label: 'Ноутбуки і комп’ютери',
         path: './laptop_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Смартфони, ТВ і електроніка',
         path: './smartphone_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Товари для геймерів',
         path: './game-controller_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Побутова техніка',
         path: './washing-machine_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Товари для дому',
         path: './armchair_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Інструменти та автотовари',
         path: './drill_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Сантехніка та ремонт',
         path: './bath_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Дача, сад і город',
         path: './spade_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Спорт і захоплення',
         path: './sports_icon.png',
+        to: '/category',
     },
     {
         label: 'Одяг, взуття та прикраси',
         path: './clothes_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Краса та здоров’я',
         path: './perfume_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Дитячі товари',
         path: './bear_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Зоотовари',
         path: './cat-footprint_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Офіс, школа, книги',
         path: './attach_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Побутова хімія',
         path: './insecticide_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Енергонезалежність',
         path: './warning-battery_icon.png',
+        to: '/notfound',
     },
     {
         label: 'Розігрів зникажми до -45%',
         path: './discount_icon.png',
+        to: '/notfound',
     },
 ]
 

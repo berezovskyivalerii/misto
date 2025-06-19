@@ -1,6 +1,7 @@
 export const recommendations = [
     {
         id: `1`,
+        path: '/product',
         image: './basketball_orange.png',
         title: `М'яч баскетбольний Nike Everyday Play...`,
         oldPrice: 1059,
@@ -8,6 +9,7 @@ export const recommendations = [
     },
     {   
         id: `2`,
+        path: '/notfound',
         image: './puzzle.png',
         title: `Пазли тришарові Interdruk Secret Garden`,
         oldPrice: 889,
@@ -15,6 +17,7 @@ export const recommendations = [
     },
     {   
         id: `3`,
+        path: '/notfound',
         image: './lamp.png',
         title: `Настільна лампа RZTK Pixar Lamp E27 Black`,
         oldPrice: 795,
@@ -22,6 +25,7 @@ export const recommendations = [
     },
     {   
         id: `4`,
+        path: '/notfound',
         image: './shampoo.png',
         title: `Шампунь Doliva (Olivenol) 200 мл`,
         oldPrice: 340,
@@ -29,6 +33,7 @@ export const recommendations = [
     },
     {   
         id: `5`,
+        path: '/notfound',
         image: './paper.png',
         title: `Папір для нотаток Axent з липким шаром`,
         oldPrice: 164,
@@ -36,6 +41,7 @@ export const recommendations = [
     },
     {   
         id: `6`,
+        path: '/notfound',
         image: './shv-machine.png',
         title: `Міні швейна машинка 4.8W UTM Sewing`,
         oldPrice: 624,
@@ -43,6 +49,7 @@ export const recommendations = [
     },
     {   
         id: `7`,
+        path: '/notfound',
         image: './dog_food.png',
         title: `Упаковка ласощів для собак Half&Half `,
         oldPrice: 132,
@@ -53,6 +60,7 @@ export const recommendations = [
 export const offers = [
     {
         id: `1`,
+        path: '/notfound',
         hoverImage: './popmart_card.png',
         image: './test_img.png',
         description:
@@ -65,6 +73,7 @@ export const offers = [
     },
     {
         id: `2`,
+        path: '/notfound',
         hoverImage: './cleaner_2.png',
         image: './cleaner_robot.png',
         description:
@@ -77,6 +86,7 @@ export const offers = [
     },
     {
         id: `3`,
+        path: '/notfound',
         hoverImage: './monlasa_cockies_2.png',
         image: './monlasa_coockies.png',
         description:
@@ -89,6 +99,7 @@ export const offers = [
     },
     {
         id: `4`,
+        path: '/notfound',
         hoverImage: './coockies_2.png',
         image: './coockies.png',
         description:
@@ -101,6 +112,7 @@ export const offers = [
     },
     {
         id: `5`,
+        path: '/notfound',
         hoverImage: './watches_2.png',
         image: './watches.png',
         description:
@@ -113,6 +125,7 @@ export const offers = [
     },
     {
         id: `6`,
+        path: '/notfound',
         hoverImage: './circle_armchair_2.png',
         image: './circle_armchair.png',
         description:
@@ -125,6 +138,7 @@ export const offers = [
     },
     {
         id: `7`,
+        path: '/notfound',
         hoverImage: './pets_backpack_2.png',
         image: './pets_backpack.png',
         description:
@@ -137,6 +151,7 @@ export const offers = [
     },
     {
         id: `8`,
+        path: '/notfound',
         hoverImage: './zibi_2.png',
         image: './zibi.png',
         description:
@@ -149,6 +164,7 @@ export const offers = [
     },
     {
         id: `9`,
+        path: '/notfound',
         hoverImage: './ziomi_walk_2.png',
         image: './xiomi_walk.png',
         description:
@@ -161,6 +177,7 @@ export const offers = [
     },
     {
         id: `10`,
+        path: '/notfound',
         hoverImage: './shoes-Boy_2.png',
         image: './shoes_boy.png',
         description:
@@ -173,6 +190,7 @@ export const offers = [
     },
     {
         id: `11`,
+        path: '/notfound',
         hoverImage: './ariel_color_2.png',
         image: './ariel_color.png',
         description:
@@ -185,6 +203,7 @@ export const offers = [
     },
     {
         id: `12`,
+        path: '/notfound',
         hoverImage: './philips_2.png',
         image: './philips.png',
         description:
@@ -196,3 +215,240 @@ export const offers = [
         price: 2894,        
     },
 ]
+
+export const balls = [
+    {
+        id: `1`,
+        path: '/notfound',
+        hoverImage: './ball_1_2.png',
+        image: './ball_1.png',
+        description:
+            'Виведіть свою гру на новий рівень з м’ячем Orbita 3 Football. Цей м`яч для матчів високого рівня, виготовлений методом високочастотного ...',
+        title: `М'яч футбольний Puma Orbita 3 TB (FIFA Quality)`,
+        rating: 3,
+        reviews: 1,
+        oldPrice: 999,
+        price: 799,
+    },
+    {
+        id: `2`,
+        path: '/notfound',
+        hoverImage: './ball_2_2.png',
+        image: './ball_2.png',
+        description:
+            'Виведіть свою гру на новий рівень з футбольним м`ячем Orbita 6. Ідеально підходить для регулярних тренувань завдяки 32 панелям, зшитим машинним...',
+        title: `М'яч футбольний тренувальний Puma Orbita 6 MS`,
+        rating: 4,
+        reviews: 1,
+        oldPrice: 990,
+        price: 599,
+    },
+    {
+        id: `3`,
+        path: '/notfound',
+        hoverImage: './ball_3_2.png',
+        image: './ball_3.png',
+        description:
+            'Якісний баскетбольний м`яч з оригінальним дизайном для справжніх ентузіастів NBA Це лінійка логотипів команд NBA, створена...',
+        title: `М'яч баскетбольний Wilson NBA ALL TEAM Outdoor Size 7`,
+        rating: 5,
+        reviews: 1,
+        oldPrice: 1099,
+        price: 799,
+    },
+    {
+        id: `4`,
+        path: '/notfound',
+        hoverImage: './ball_4_2.png',
+        image: './ball_4.png',
+        description:
+            'Напівпрофесійний м`яч Adidas Tiro Match HT2421 відмінне рішення для тренувань. Прошиті вручну панелі та зносостійка поверхня роблять...',
+        title: `М'яч футбольний Adidas TIRO MATCH (HT2421)`,
+        rating: 5,
+        reviews: 1,
+        oldPrice: 1099,
+        price: 799,
+    },
+    {
+        id: `5`,
+        path: '/notfound',
+        hoverImage: './ball_5_2.png',
+        image: './ball_5.png',
+        description:
+            'Волейбольний м`яч Merco Dynamic - це недорогий вибір для вашого хобі, гри з сім`єю або для різноманітних тренувань. Легкий м`яч підходить для',
+        title: `М'яч волейбольний Merco Dynamic volleyball ball Size 5`,
+        rating: 4,
+        reviews: 21,
+        oldPrice: 699,
+        price: 495,
+    },
+    {
+        id: `6`,
+        path: '/notfound',
+        hoverImage: './ball_6_2.png',
+        image: './ball_6.png',
+        description:
+            'М`яч баскетбольний Wilson Gold Comp - це високоякісний баскетбольний м`яч, призначений для серйозних гравців, які прагнуть максимальної...',
+        title: `М'яч баскетбольний Wilson Gold Comp Size 7`,
+        rating: 5,
+        reviews: 7,
+        oldPrice: 1999,
+        price: 1798,
+    },
+    {
+        id: `7`,
+        path: '/notfound',
+        hoverImage: './ball_7_2.png',
+        image: './ball_7.png',
+        description:
+            'Баскетбольний м’яч Puma Indoor Basketball — чудовий баскетбольний м’яч для відпочинку в закритих приміщеннях. Має ребристу структуру...',
+        title: `М'яч баскетбольний Puma Basketball IND`,
+        rating: 5,
+        reviews: 6,
+        oldPrice: 1190,
+        price: 699,
+    },
+    {
+        id: `8`,
+        path: '/notfound',
+        hoverImage: './ball_8_2.png',
+        image: './ball_8.png',
+        description:
+            'Міні-версія офіційного ігрового м`яча матчів плей-офф Ліги Чемпіонів УЄФА сезону 2024/2025 рр., фінал якої буде зіграний у Мюнхені у травні 2025...',
+        title: `М'яч футбольний Adidas UCL 2025 Munich Mini`,
+        rating: 4,
+        reviews: 1,
+        oldPrice: 900,
+        price: 799,
+    },
+    {
+        id: `9`,
+        path: '/notfound',
+        hoverImage: './ball_9_2.png',
+        image: './ball_9.png',
+        description:
+            'Виведіть свою гру на новий рівень з м’ячем Orbita 3 Football. Цей м`яч для матчів високого рівня, виготовлений методом високочастотного ...',
+        title: `М'яч футбольний Puma Orbita 3 TB (FIFA Quality)`,
+        rating: 5,
+        reviews: 1,
+        oldPrice: 2200,
+        price: 1369,
+    },
+    {
+        id: `10`,
+        path: '/notfound',
+        hoverImage: './ball_10_2.png',
+        image: './ball_10.png',
+        description:
+            'Цей м`яч прийшов на зміну легендарному Nike Dominate. Баскетбольний м`яч Nike Everyday Playground 8P виготовлений із переробленої гуми...',
+        title: `М'яч баскетбольний Nike Everyday Playground 8P Graphic`,
+        rating: 4,
+        reviews: 7,
+        oldPrice: 1799,
+        price: 1092,
+    },
+    {
+        id: `11`,
+        path: '/notfound',
+        hoverImage: './ball_11_2.png',
+        image: './ball_11.png',
+        description:
+            'М`яч для пляжного волейболу Wilson AVP Movement натхненний узбережжям. М`яч зшитий на машині і має 18 панелей, які дозволяють йому...',
+        title: `М'яч волейбольний Wilson AVP Movement VB Orange/Blue `,
+        rating: 5,
+        reviews: 1,
+        oldPrice: 1199,
+        price: 964,
+    },
+    {
+        id: `12`,
+        path: '/notfound',
+        hoverImage: './ball_12_2.png',
+        image: './ball_12.png',
+        description:
+            'Puma Futsal 2 HS — це чудовий традиційний і надійний вибір для регулярних тренувань з футзалу. Ручна прошивка гарантує виняткову міцність.',
+        title: `М'яч баскетбольний Puma Basketball IND`,
+        rating: 0,
+        reviews: 0,
+        oldPrice: 1490,
+        price: 931,
+    },
+    {
+        id: `13`,
+        path: '/notfound',
+        hoverImage: './ball_13_2.png',
+        image: './ball_13.png',
+        description:
+            'М`яч волейбольний Mikasa V330W. Ексклюзивний офіційний ігровий м`яч FIVB — професійна модель. FIVB Official Game Ball — Офіційний Ігровий м`яч',
+        title: `М'яч волейбольний Mikasa V330W`,
+        rating: 4,
+        reviews: 10,
+        oldPrice: 3100,
+        price: 2988,
+    },
+    {
+        id: `14`,
+        path: '/notfound',
+        hoverImage: './ball_14_2.png',
+        image: './ball_14.png',
+        description:
+            'М`яч футбольний Newt Rnx Champion League №5 NE-F-FLB — чудовий м`яч, який покликаний забезпечити якісний тренувальний процес для ...',
+        title: `М'яч футбольний Newt Rnx Champion League №5`,
+        rating: 4,
+        reviews: 24,
+        oldPrice: 799,
+        price: 662,
+    },
+    {
+        id: `15`,
+        path: '/notfound',
+        hoverImage: './ball_15_2.png',
+        image: './ball_15.png',
+        description:
+            'М`яч баскетбольний Nike Jordan Playground 2.0 розмір 6 гумовий призначений для гри на будь-якій поверхні, виконаний з високоякісної гуми і...',
+        title: `М'яч баскетбольний Nike Jordan Playground 2.0 8P Deflated Wolf`,
+        rating: 5,
+        reviews: 4,
+        oldPrice: 1599,
+        price: 1344,
+    },
+    {
+        id: `16`,
+        path: '/notfound',
+        hoverImage: './ball_16_2.png',
+        image: './ball_16.png',
+        description:
+            'М`яч баскетбольний Nike Jordan Playground 2.0 розмір 6 гумовий призначений для гри на будь-якій поверхні, виконаний з високоякісної гуми і...',
+        title: `М'яч баскетбольний Nike Everyday Playground 8P Graphic`,
+        rating: 5,
+        reviews: 8,
+        oldPrice: 1299,
+        price: 1092,
+    },
+    {
+        id: `17`,
+        path: '/notfound',
+        hoverImage: './ball_15_2.png',
+        image: './ball_15.png',
+        description:
+            'М`яч баскетбольний Nike Jordan Playground 2.0 розмір 6 гумовий призначений для гри на будь-якій поверхні, виконаний з високоякісної гуми і...',
+        title: `М'яч баскетбольний Nike Jordan Playground 2.0 8P Deflated Wolf`,
+        rating: 5,
+        reviews: 4,
+        oldPrice: 1599,
+        price: 1344,
+    },
+    {
+        id: `18`,
+        path: '/notfound',
+        hoverImage: './ball_16_2.png',
+        image: './ball_16.png',
+        description:
+            'М`яч баскетбольний Nike Jordan Playground 2.0 розмір 6 гумовий призначений для гри на будь-якій поверхні, виконаний з високоякісної гуми і...',
+        title: `М'яч баскетбольний Nike Everyday Playground 8P Graphic`,
+        rating: 5,
+        reviews: 8,
+        oldPrice: 1299,
+        price: 1092,
+    },
+] 

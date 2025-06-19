@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {Link} from 'react-router-dom'
 
 type ColumnGroup = { subtitle: string; items: string[] };
 type Category = { id: string; title: string; icon: string; columns: ColumnGroup[] };
@@ -31,9 +32,9 @@ export default function CatalogDesktop({
                             onMouseEnter={() => setActive(cat.id)}
                             onClick={() => setActive(cat.id)}
                             className={`
-        flex items-center gap-3 w-full text-left rounded-md px-3 py-2
-        ${cat.id === active ? 'text-[--color-purple]' : 'hover:bg-gray-100'}
-      `}
+                            flex items-center gap-3 w-full text-left rounded-md px-3 py-2
+                            ${cat.id === active ? 'text-[--color-purple]' : 'hover:bg-gray-100'}
+                        `}
                         >
                             <img src={cat.icon} alt="" className="h-6 w-6" />
                             <span>{cat.title}</span>
@@ -45,14 +46,21 @@ export default function CatalogDesktop({
                     {grid.map((col, i) => (
                         <div
                             key={i}
-                            className={`space-y-3 overflow-y-hidden px-4 ${i === 0 ? 'bg-orange-100 rounded-xl p-4 box-border' : ''}`}
+                            className={`space-y-3 overflow-y-hidden px-4 ${i === 0 ? 'bg-orange-100 rounded-xl p-4 box-border' : ''
+                                }`}
                         >
                             {col.map(({ subtitle, items }) => (
                                 <ul key={subtitle} className="space-y-2">
                                     <li className="text-[--color-purple]">{subtitle}</li>
-                                    {items.map((x) => (
-                                        <li key={x} className="text-sm hover:text-[--color-purple] cursor-pointer">
-                                            {x}
+
+                                    {items.map(x => (
+                                        <li key={x}>
+                                            <Link
+                                                to="/notfound"
+                                                className="block text-sm hover:text-[--color-purple] cursor-pointer"
+                                            >
+                                                {x}
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
