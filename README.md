@@ -28,5 +28,6 @@ To run the project locally:
    ```
 2. **Run the project:**
    ```bash
+   cd ./misto
    npm run dev
    ```
